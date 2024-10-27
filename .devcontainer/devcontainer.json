@@ -1,0 +1,444 @@
+{
+  "name": "Node.js Development",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "nodejs",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "aaron-bond.better-comments",
+        "christian-kohler.path-intellisense",
+        "codezombiech.gitignore",
+        "compulim.indent4to2",
+        "cschlosser.doxdocgen",
+        "donjayamanne.githistory",
+        "donjayamanne.python-environment-manager",
+        "emmanuelbeziat.vscode-great-icons",
+        "formulahendry.code-runner",
+        "formulahendry.docker-explorer",
+        "foxundermoon.shell-format",
+        "github.copilot",
+        "github.copilot-chat",
+        "github.github-vscode-theme",
+        "gordonsmith.observable-js",
+        "james-yu.latex-workshop",
+        "maciejdems.add-to-gitignore",
+        "magicstack.magicpython",
+        "mechatroner.rainbow-csv",
+        "mhutchie.git-graph",
+        "mintlify.document",
+        "mkxml.vscode-filesize",
+        "ms-azuretools.vscode-docker",
+        "ms-ceintl.vscode-language-pack-zh-hans",
+        "ms-python.debugpy",
+        "ms-python.isort",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.cpptools-themes",
+        "ms-vscode.live-server",
+        "ms-vscode.makefile-tools",
+        "nickfode.latex-formatter",
+        "pkief.material-icon-theme",
+        "rogalmic.bash-debug",
+        "shardulm94.trailing-spaces",
+        "steoates.autoimport",
+        "tecosaur.latex-utilities",
+        "usernamehw.errorlens",
+        "vadimcn.vscode-lldb",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+        "visualstudioexptteam.vscodeintellicode",
+        "vue.volar",
+        "waderyan.gitblame",
+        "wakatime.vscode-wakatime",
+        "wowbox.code-debuger",
+        "xaver.clang-format",
+        "yzane.markdown-pdf",
+        "yzhang.dictionary-completion"
+      ],
+      "settings": {
+        "git.ignoreMissingGitWarning": true,
+        "git.enableSmartCommit": true,
+        "editor.tabSize": 2,
+        "editor.quickSuggestions": {
+          "other": true,
+          "comments": true,
+          "strings": true
+        },
+        "files.autoSave": "afterDelay",
+        "editor.autoClosingBrackets": "always",
+        "git.confirmSync": false,
+        "git.autofetch": true,
+        "workbench.editorAssociations": {
+          "*.ipynb": "jupyter-notebook",
+          "*.pdf": "latex-workshop-pdf-hook",
+          "*.dll": "default"
+        },
+        "workbench.tree.indent": 4,
+        "explorer.confirmDragAndDrop": false,
+        "explorer.confirmDelete": false,
+        "security.workspace.trust.untrustedFiles": "open",
+        "notebook.cellToolbarLocation": {
+          "default": "right",
+          "jupyter-notebook": "left"
+        },
+        "editor.fontLigatures": true,
+        "editor.fontWeight": "normal",
+        "editor.fontFamily": "\"FiraCode\", \"FiraCode Nerd Font Mono\"",
+        "editor.accessibilityPageSize": 1000,
+        "editor.codeLensFontFamily": "\"DejaveSansMono Nerd Font\", \"FiraCode Nerd Font Mono\"",
+        "editor.linkedEditing": true,
+        "editor.tabCompletion": "on",
+        "editor.find.autoFindInSelection": "multiline",
+        "diffEditor.codeLens": true,
+        "editor.suggest.preview": true,
+        "files.autoGuessEncoding": true,
+        "editor.suggestSelection": "first",
+        "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+        "debug.console.fontFamily": "\"FiraCode Nerd Font Mono\"",
+        "workbench.list.horizontalScrolling": true,
+        "typescript.tsserver.maxTsServerMemory": 8192,
+        "settingsSync.ignoredSettings": [
+          "latex-utilities.countWord.path",
+          "latex-workshop.texdoc.path",
+          "latex-workshop.texcount.path",
+          "clang-format.assumeFilename"
+        ],
+        "files.exclude": {
+          "**/.classpath": true,
+          "**/.project": true,
+          "**/.settings": true,
+          "**/.factorypath": true
+        },
+        "search.followSymlinks": false,
+        "editor.fastScrollSensitivity": 0,
+        "editor.mouseWheelZoom": true,
+        "editor.wrappingStrategy": "advanced",
+        "files.eol": "\n",
+        "workbench.editor.wrapTabs": true,
+        "workbench.editor.tabSizing": "shrink",
+        "editor.stickyTabStops": true,
+        "typescript.disableAutomaticTypeAcquisition": true,
+        "git.allowForcePush": true,
+        "git.fetchOnPull": true,
+        "git.postCommitCommand": "push",
+        "git.showPushSuccessNotification": true,
+        "git.supportCancellation": true,
+        "files.associations": {
+          "*.cjson": "jsonc",
+          "*.wxss": "css",
+          "*.wxs": "javascript"
+        },
+        "emmet.includeLanguages": {
+          "wxml": "html"
+        },
+        "workbench.tree.renderIndentGuides": "always",
+        "html.format.indentHandlebars": true,
+        "editor.autoIndent": "advanced",
+        "search.useGlobalIgnoreFiles": true,
+        "editor.unicodeHighlight.includeComments": true,
+        "editor.formatOnType": true,
+        "files.insertFinalNewline": true,
+        "workbench.editor.labelFormat": "short",
+        "workbench.editor.untitled.labelFormat": "name",
+        "[html]": {
+          "editor.defaultFormatter": "vscode.html-language-features"
+        },
+        "css.trace.server": "messages",
+        "html.format.indentInnerHtml": true,
+        "editor.bracketPairColorization.enabled": true,
+        "editor.inlayHints.fontSize": 12,
+        "editor.cursorBlinking": "smooth",
+        "editor.cursorSmoothCaretAnimation": "on",
+        "diffEditor.maxFileSize": 0,
+        "files.trimTrailingWhitespace": true,
+        "workbench.list.smoothScrolling": true,
+        "workbench.view.alwaysShowHeaderActions": true,
+        "debug.allowBreakpointsEverywhere": true,
+        "terminal.external.osxExec": "iTerm2.app",
+        "terminal.integrated.cursorBlinking": true,
+        "terminal.integrated.cursorStyle": "underline",
+        "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+        "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+        "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+        "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+        "[cpp]": {
+          "editor.defaultFormatter": "xaver.clang-format"
+        },
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "xelatex",
+            "tools": [
+              "xelatex"
+            ]
+          },
+          {
+            "name": "latexmk",
+            "tools": [
+              "latexmk"
+            ]
+          },
+          {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+              "pdflatex",
+              "bibtex",
+              "pdflatex",
+              "pdflatex"
+            ]
+          }
+        ],
+        "latex-workshop.latex.tools": [
+          {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+              "-shell-escape",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "-pdf",
+              "%DOC%"
+            ]
+          },
+          {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+            ]
+          },
+          {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+            ]
+          },
+          {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+              "%DOCFILE%"
+            ]
+          }
+        ],
+        "latex-workshop.view.pdf.viewer": "tab",
+        "latex-workshop.latex.clean.fileTypes": [
+          "*.aux",
+          "*.bbl",
+          "*.blg",
+          "*.idx",
+          "*.ind",
+          "*.lof",
+          "*.lot",
+          "*.out",
+          "*.toc",
+          "*.acn",
+          "*.acr",
+          "*.alg",
+          "*.glg",
+          "*.glo",
+          "*.gls",
+          "*.ist",
+          "*.fls",
+          "*.log",
+          "*.fdb_latexmk"
+        ],
+        "[jsonc]": {
+          "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        "[latex]": {
+          "editor.defaultFormatter": "nickfode.latex-formatter"
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "vscode.typescript-language-features"
+        },
+        "javascript.format.semicolons": "insert",
+        "javascript.referencesCodeLens.enabled": true,
+        "javascript.referencesCodeLens.showOnAllFunctions": true,
+        "window.titleBarStyle": "custom",
+        "html.format.templating": true,
+        "html.format.wrapAttributes": "force-aligned",
+        "html.trace.server": "verbose",
+        "terminal.integrated.minimumContrastRatio": 7,
+        "terminal.integrated.commandsToSkipShell": [
+          "psl.stepIn",
+          "psl.stepOut",
+          "psl.stepOver",
+          "psl.sendToHostTerminal"
+        ],
+        "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+        "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+        "notebook.lineNumbers": "on",
+        "notebook.outline.showCodeCells": true,
+        "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+        "javascript.inlayHints.enumMemberValues.enabled": true,
+        "git-graph.openToTheRepoOfTheActiveTextEditorDocument": true,
+        "doxdocgen.generic.authorName": "Hengyi Li",
+        "doxdocgen.generic.authorEmail": "trdli@ucdavis.edu",
+        "doxdocgen.generic.linesToGet": 50,
+        "doxdocgen.generic.useGitUserEmail": true,
+        "lldb.library": "C:\\Program Files\\LLVM\\bin\\lldb.exe",
+        "workbench.colorCustomizations": {
+          "editorCursor.foreground": "#FF0000"
+        },
+        "window.dialogStyle": "custom",
+        "window.restoreFullscreen": true,
+        "window.newWindowDimensions": "inherit",
+        "window.openFoldersInNewWindow": "off",
+        "explorer.confirmUndo": "verbose",
+        "explorer.fileNesting.enabled": true,
+        "editor.stickyScroll.enabled": true,
+        "[java]": {
+          "editor.defaultFormatter": "xaver.clang-format"
+        },
+        "editor.renderWhitespace": "all",
+        "editor.autoClosingOvertype": "always",
+        "editor.autoClosingDelete": "always",
+        "editor.autoClosingQuotes": "always",
+        "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+        "editor.defaultFormatter": "ms-python.vscode-pylance",
+        "editor.smoothScrolling": true,
+        "editor.formatOnSave": true,
+        "[python]": {
+          "editor.formatOnType": true,
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+          }
+        },
+        "isort.args": [
+          "--profile",
+          "black"
+        ],
+        "settingsSync.ignoredExtensions": [
+          "ms-vscode.powershell"
+        ],
+        "[shellscript]": {
+          "editor.defaultFormatter": "foxundermoon.shell-format"
+        },
+        "editor.unicodeHighlight.nonBasicASCII": false,
+        "git.openRepositoryInParentFolders": "always",
+        "python.diagnostics.sourceMapsEnabled": true,
+        "python.globalModuleInstallation": true,
+        "http.proxyAuthorization": null,
+        "debug.console.acceptSuggestionOnEnter": "on",
+        "notebook.output.scrolling": true,
+        "notebook.output.wordWrap": true,
+        "terminal.integrated.copyOnSelection": true,
+        "docwriter.custom.author": "Hengyi Li",
+        "shellformat.useEditorConfig": true,
+        "shellformat.effectLanguages": [
+          "shellscript",
+          "dockerfile",
+          "dotenv",
+          "hosts",
+          "jvmoptions",
+          "ignore",
+          "gitignore",
+          "properties",
+          "spring-boot-properties",
+          "azcli",
+          "bats",
+          "bash",
+          "zsh"
+        ],
+        "latex-workshop.bibtex-fields.sort.enabled": true,
+        "latex-utilities.countWord.path": "C:\\Program Files\\MiKTeX\\miktex\\bin\\x64\\texcount.exe",
+        "latex-workshop.texcount.path": "/usr/bin/texcount",
+        "latex-workshop.bibtex-fields.order": [
+          "Ascending"
+        ],
+        "latex-workshop.bibtex-format.sort.enabled": true,
+        "latex-workshop.latex.autoClean.run": "onFailed",
+        "python.terminal.activateEnvInCurrentTerminal": true,
+        "python.terminal.focusAfterLaunch": true,
+        "latex-utilities.countWord.format": "${words} Words",
+        "latex-utilities.zotero.citeMethod": "vscode",
+        "latex-workshop.formatting.latexindent.args": [
+          "-c",
+          "%DIR%/",
+          "%TMPFILE%",
+          "-y=defaultIndent: 2"
+        ],
+        "lldb.launch.expressions": "native",
+        "git.ignoreRebaseWarning": true,
+        "terminal.integrated.ignoreBracketedPasteMode": true,
+        "git-graph.dialog.general.referenceInputSpaceSubstitution": "Hyphen",
+        "latex-workshop.message.information.show": true,
+        "latex-utilities.formattedPaste.useAsDefault": true,
+        "remote.autoForwardPortsSource": "hybrid",
+        "lldb.launch.terminal": "integrated",
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.definitionLinkOpensInPeek": true,
+        "accessibility.hideAccessibleView": true,
+        "explorer.confirmPasteNative": false,
+        "editor.formatOnPaste": true,
+        "chat.editor.wordWrap": "on",
+        "markdown.preview.typographer": true,
+        "markdown.updateLinksOnFileMove.enabled": "always",
+        "editor.maxTokenizationLineLength": 5000,
+        "notebook.experimental.remoteSave": true,
+        "python.analysis.userFileIndexingLimit": 3000,
+        "terminal.integrated.fontWeight": "bold",
+        "terminal.integrated.fontWeightBold": "bold",
+        "files.autoSaveWhenNoErrors": true,
+        "search.useParentIgnoreFiles": true,
+        "clang-format.fallbackStyle": "Google",
+        "clang-format.language.c.fallbackStyle": "Google",
+        "clang-format.language.cpp.fallbackStyle": "Google",
+        "clang-format.language.java.fallbackStyle": "Google",
+        "clang-format.assumeFilename": "C:\\Users\\grand\\.clang-format",
+        "terminal.integrated.enableImages": true,
+        "terminal.integrated.tabs.defaultColor": "terminal.ansiBlack",
+        "terminal.integrated.cursorStyleInactive": "underline",
+        "python.condaPath": "/c/Users/grand/anaconda3/Scripts/conda",
+        "security.allowedUNCHosts": [
+          "wsl.localhost"
+        ],
+        "terminal.integrated.gpuAcceleration": "on",
+        "terminal.integrated.smoothScrolling": true,
+        "terminal.integrated.stickyScroll.enabled": true,
+        "terminal.integrated.tabStopWidth": 2,
+        "editor.fontSize": 11,
+        "workbench.localHistory.maxFileSize": 512,
+        "workbench.sash.size": 8,
+        "workbench.iconTheme": "material-icon-theme",
+        "javascript.updateImportsOnFileMove.enabled": "always",
+        "terminal.integrated.fontFamily": "\"FiraCode Nerd Font Mono\"",
+        "C_Cpp.clang_format_fallbackStyle": "Google",
+        "github.copilot.editor.enableAutoCompletions": true,
+        "workbench.panel.defaultLocation": "right",
+        "terminal.integrated.middleClickBehavior": "paste",
+        "terminal.integrated.mouseWheelZoom": true,
+        "terminal.integrated.suggest.enabled": true,
+        "terminal.integrated.tabs.hideCondition": "never",
+        "chat.experimental.variables.terminal": true,
+        "git.terminalGitEditor": true,
+        "search.seedOnFocus": true,
+        "latex-workshop.view.autoFocus.enabled": true,
+        "window.customTitleBarVisibility": "windowed",
+        "terminal.external.windowsExec": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "terminal.integrated.defaultProfile.windows": "Git Bash",
+        "terminal.integrated.detectLocale": "on",
+        "python.defaultInterpreterPath": "~/anaconda3/python.exe",
+        "python.createEnvironment.trigger": "off",
+        "better-comments.highlightPlainText": true,
+        "terminal.integrated.fontSize": 11,
+        "git.rebaseWhenSync": true,
+        "editor.wordWrapColumn": 78,
+        "html.format.wrapLineLength": 78,
+        "workbench.colorTheme": "GitHub Dark Dimmed"
+      }
+    }
+  }
+}

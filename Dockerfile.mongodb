@@ -1,0 +1,35 @@
+# Dockerfile.mongodb
+FROM mongo:latest
+
+RUN apt-get update && \
+    apt-get install -y zsh git curl figlet lsd fzf bat neovim btop && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
+    chsh -s $(which zsh)
+
+RUN echo "alias init='fastfetch && figlet \"Developer Drive\" && lsd -l'" >> ~/.zshrc && \
+    echo "alias zshrb='source ~/.zshrc'" >> ~/.zshrc && \
+    echo "alias dev='cd /usr/src/app/'" >> ~/.zshrc && \
+    echo "alias clang++='clang++ -Oz -pedantic-errors -Weverything -Wno-poison-system-directories -Wmsvc-not-found -Wno-c++98-compat -std=c++20 -o program'" >> ~/.zshrc && \
+    echo "alias g++='g++ --pthread -o program'" >> ~/.zshrc && \
+    echo "alias ls='lsd'" >> ~/.zshrc && \
+    echo "alias l='ls -l'" >> ~/.zshrc && \
+    echo "alias la='ls -a'" >> ~/.zshrc && \
+    echo "alias lla='ls -la'" >> ~/.zshrc && \
+    echo "alias lt='ls --tree'" >> ~/.zshrc && \
+    echo "alias pip='pip3'" >> ~/.zshrc && \
+    echo "alias python='python3'" >> ~/.zshrc && \
+    echo "alias fetch='git fetch'" >> ~/.zshrc && \
+    echo "alias pull='git pull'" >> ~/.zshrc && \
+    echo "alias push='git add . && git commit -m \"update\" && git merge && git push'" >> ~/.zshrc && \
+    echo "alias fresh='fetch && pull && push'" >> ~/.zshrc && \
+    echo "alias status='git status'" >> ~/.zshrc && \
+    echo "alias vim='nvim'" >> ~/.zshrc && \
+    echo "alias vi='nvim'" >> ~/.zshrc && \
+    echo "alias cat='bat'" >> ~/.zshrc && \
+    echo "alias ff='fzf'" >> ~/.zshrc && \
+    echo "alias htop='btop'" >> ~/.zshrc && \
+    echo "init" >> ~/.zshrc
+
+

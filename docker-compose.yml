@@ -1,0 +1,52 @@
+services:
+  mongodb:
+    build:
+      context: .
+      dockerfile: Dockerfile.mongodb
+    container_name: my-mongodb
+    volumes:
+      - /d/Developer/MongodbData:/data/db
+    ports:
+      - "27017:27017"
+
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile.nodejs
+    container_name: node-dev-env
+    working_dir: /usr/src/app
+    volumes:
+      - /d/Developer:/usr/src/app
+      - /c/Users/grand/.vscode/extensions:/home/node/.vscode/extensions
+      - /c/Users/grand/AppData/Roaming/Code/User:/home/node/.config/Code/User
+      - /c/Users/grand/.gitconfig:/home/node/.gitconfig
+      - /c/Users/grand/.ssh:/home/node/.ssh
+    network_mode: host
+
+  cpp-env:
+    build:
+      context: .
+      dockerfile: Dockerfile.cpp-env
+    container_name: cpp-dev-env
+    working_dir: /usr/src/app
+    volumes:
+      - /d/Developer:/usr/src/app
+      - /c/Users/grand/.vscode/extensions:/root/.vscode/extensions
+      - /c/Users/grand/AppData/Roaming/Code/User:/root/.config/Code/User
+      - /c/Users/grand/.gitconfig:/root/.gitconfig
+      - /c/Users/grand/.ssh:/root/.ssh
+    network_mode: host
+
+  java-env:
+    build:
+      context: .
+      dockerfile: Dockerfile.java-env
+    container_name: java-dev-env
+    working_dir: /usr/src/app
+    volumes:
+      - /d/Developer:/usr/src/app
+      - /c/Users/grand/.vscode/extensions:/root/.vscode/extensions
+      - /c/Users/grand/AppData/Roaming/Code/User:/root/.config/Code/User
+      - /c/Users/grand/.gitconfig:/root/.gitconfig
+      - /c/Users/grand/.ssh:/root/.ssh
+    network_mode: host
