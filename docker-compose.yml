@@ -17,10 +17,10 @@ services:
     working_dir: /usr/src/app
     volumes:
       - /d/Developer:/usr/src/app
-      - /c/Users/grand/.vscode/extensions:/home/node/.vscode/extensions
-      - /c/Users/grand/AppData/Roaming/Code/User:/home/node/.config/Code/User
-      - /c/Users/grand/.gitconfig:/home/node/.gitconfig
-      - /c/Users/grand/.ssh:/home/node/.ssh
+      - /c/Users/SilverhandMiles/.vscode/extensions:/home/node/.vscode/extensions
+      - /c/Users/SilverhandMiles/AppData/Roaming/Code/User:/home/node/.config/Code/User
+      - /c/Users/SilverhandMiles/.gitconfig:/home/node/.gitconfig
+      - /c/Users/SilverhandMiles/.ssh:/home/node/.ssh
     network_mode: host
 
   cpp-env:
@@ -31,10 +31,10 @@ services:
     working_dir: /usr/src/app
     volumes:
       - /d/Developer:/usr/src/app
-      - /c/Users/grand/.vscode/extensions:/root/.vscode/extensions
-      - /c/Users/grand/AppData/Roaming/Code/User:/root/.config/Code/User
-      - /c/Users/grand/.gitconfig:/root/.gitconfig
-      - /c/Users/grand/.ssh:/root/.ssh
+      - /c/Users/SilverhandMiles/.vscode/extensions:/root/.vscode/extensions
+      - /c/Users/SilverhandMiles/AppData/Roaming/Code/User:/root/.config/Code/User
+      - /c/Users/SilverhandMiles/.gitconfig:/root/.gitconfig
+      - /c/Users/SilverhandMiles/.ssh:/root/.ssh
     network_mode: host
 
   java-env:
@@ -45,8 +45,8 @@ services:
     working_dir: /usr/src/app
     volumes:
       - /d/Developer:/usr/src/app
-      - /c/Users/grand/.vscode/extensions:/root/.vscode/extensions
-      - /c/Users/grand/AppData/Roaming/Code/User:/root/.config/Code/User
-      - /c/Users/grand/.gitconfig:/root/.gitconfig
-      - /c/Users/grand/.ssh:/root/.ssh
+      - /c/Users/SilverhandMiles/.vscode/extensions:/root/.vscode/extensions
+      - /c/Users/SilverhandMiles/AppData/Roaming/Code/User:/root/.config/Code/User
+      - /c/Users/SilverhandMiles/.gitconfig:/root/.gitconfig
+      - /c/Users/SilverhandMiles/.ssh:/root/.ssh
     network_mode: host
