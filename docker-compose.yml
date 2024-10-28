@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile.mongodb
     container_name: my-mongodb
     volumes:
-      - /d/Developer/MongodbData:/data/db
+      - /e/Developer/MongodbData:/data/db
     ports:
       - "27017:27017"
 
@@ -16,7 +16,7 @@ services:
     container_name: node-dev-env
     working_dir: /usr/src/app
     volumes:
-      - /d/Developer:/usr/src/app
+      - /e/Developer:/usr/src/app
       - /c/Users/SilverhandMiles/.vscode/extensions:/home/node/.vscode/extensions
       - /c/Users/SilverhandMiles/AppData/Roaming/Code/User:/home/node/.config/Code/User
       - /c/Users/SilverhandMiles/.gitconfig:/home/node/.gitconfig
@@ -30,7 +30,7 @@ services:
     container_name: cpp-dev-env
     working_dir: /usr/src/app
     volumes:
-      - /d/Developer:/usr/src/app
+      - /e/Developer:/usr/src/app
       - /c/Users/SilverhandMiles/.vscode/extensions:/root/.vscode/extensions
       - /c/Users/SilverhandMiles/AppData/Roaming/Code/User:/root/.config/Code/User
       - /c/Users/SilverhandMiles/.gitconfig:/root/.gitconfig
@@ -44,7 +44,7 @@ services:
     container_name: java-dev-env
     working_dir: /usr/src/app
     volumes:
-      - /d/Developer:/usr/src/app
+      - /e/Developer:/usr/src/app
       - /c/Users/SilverhandMiles/.vscode/extensions:/root/.vscode/extensions
       - /c/Users/SilverhandMiles/AppData/Roaming/Code/User:/root/.config/Code/User
       - /c/Users/SilverhandMiles/.gitconfig:/root/.gitconfig
