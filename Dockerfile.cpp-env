@@ -1,5 +1,5 @@
-# Dockerfile.cpp
-FROM gcc:latest
+# Dockerfile.cpp-env
+FROM clang:latest
 
 RUN apt-get update && \
     apt-get install -y zsh git curl figlet lsd fzf bat neovim btop && \
@@ -33,4 +33,3 @@ RUN echo "alias init='fastfetch && figlet \"Developer Drive\" && lsd -l'" >> ~/.
     echo "init" >> ~/.zshrc
 
 CMD ["tail", "-f", "/dev/null"]
-
