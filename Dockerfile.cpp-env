@@ -12,7 +12,6 @@ RUN echo "alias init='fastfetch && figlet \"Developer Drive\" && lsd -l'" >> ~/.
     echo "alias zshrb='source ~/.zshrc'" >> ~/.zshrc && \
     echo "alias dev='cd /usr/src/app/'" >> ~/.zshrc && \
     echo "alias clang++='clang++ -Oz -pedantic-errors -Weverything -Wno-poison-system-directories -Wmsvc-not-found -Wno-c++98-compat -std=c++20 -o program'" >> ~/.zshrc && \
-    echo "alias g++='g++ --pthread -o program'" >> ~/.zshrc && \
     echo "alias ls='lsd'" >> ~/.zshrc && \
     echo "alias l='ls -l'" >> ~/.zshrc && \
     echo "alias la='ls -a'" >> ~/.zshrc && \
