@@ -1,5 +1,5 @@
 # Dockerfile.cpp-env
-FROM clang:latest
+FROM silkeh/clang:latest
 
 RUN apt-get update && \
     apt-get install -y zsh git curl figlet lsd fzf bat neovim btop && \
