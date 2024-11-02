@@ -50,3 +50,22 @@ services:
       - /c/Users/SilverhandMiles/.gitconfig:/root/.gitconfig
       - /c/Users/SilverhandMiles/.ssh:/root/.ssh
     network_mode: host
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:ollama
+    container_name: open-webui
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
+    ports:
+      - "3000:8080"
+    volumes:
+      - ollama:/root/.ollama
+      - open-webui:/app/backend/data
+
+volumes:
+  ollama:
+  open-webui:
