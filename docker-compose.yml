@@ -23,34 +23,6 @@ services:
       - /c/Users/SilverhandMiles/.ssh:/home/node/.ssh
     network_mode: host
 
-  cpp-env:
-    build:
-      context: .
-      dockerfile: Dockerfile.cpp-env
-    container_name: cpp-dev-env
-    working_dir: /usr/src/app
-    volumes:
-      - /e/Developer:/usr/src/app
-      - /c/Users/SilverhandMiles/.vscode/extensions:/root/.vscode/extensions
-      - /c/Users/SilverhandMiles/AppData/Roaming/Code/User:/root/.config/Code/User
-      - /c/Users/SilverhandMiles/.gitconfig:/root/.gitconfig
-      - /c/Users/SilverhandMiles/.ssh:/root/.ssh
-    network_mode: host
-
-  java-env:
-    build:
-      context: .
-      dockerfile: Dockerfile.java-env
-    container_name: java-dev-env
-    working_dir: /usr/src/app
-    volumes:
-      - /e/Developer:/usr/src/app
-      - /c/Users/SilverhandMiles/.vscode/extensions:/root/.vscode/extensions
-      - /c/Users/SilverhandMiles/AppData/Roaming/Code/User:/root/.config/Code/User
-      - /c/Users/SilverhandMiles/.gitconfig:/root/.gitconfig
-      - /c/Users/SilverhandMiles/.ssh:/root/.ssh
-    network_mode: host
-
   open-webui:
     image: ghcr.io/open-webui/open-webui:ollama
     container_name: open-webui
