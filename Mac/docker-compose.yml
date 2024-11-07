@@ -1,0 +1,24 @@
+services:
+  mongodb:
+    build:
+      context: .
+      dockerfile: Dockerfile.mongodb
+    container_name: my-mongodb
+    volumes:
+      - ~/Developer/MongodbData:/data/db
+    ports:
+      - "27017:27017"
+
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile.nodejs
+    container_name: node-dev-env
+    working_dir: /usr/src/app
+    volumes:
+      - ~/Developer:/usr/src/app
+      - ~/.vscode/extensions:/home/node/.vscode/extensions
+      - ~/Library/Application\ Support/Code/User/:/home/node/.config/Code/User
+      - ~/.gitconfig:/home/node/.gitconfig
+      - ~/.ssh:/home/node/.ssh
+    network_mode: host
