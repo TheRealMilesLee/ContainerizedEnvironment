@@ -4,6 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile.mongodb
     container_name: my-mongodb
+    restart: always
     volumes:
       - /e/Developer/MongodbData:/data/db
     ports:
@@ -15,6 +16,7 @@ services:
       dockerfile: Dockerfile.nodejs
     container_name: node-dev-env
     working_dir: /usr/src/app
+    restart: always
     volumes:
       - /e/Developer:/usr/src/app
       - /c/Users/SilverhandMiles/.vscode/extensions:/home/node/.vscode/extensions
