@@ -35,4 +35,4 @@ RUN echo "alias init='fastfetch && figlet \"Developer Drive\" && lsd -l'" >> ~/.
     echo "alias htop='btop'" >> ~/.zshrc
 
 # 设置默认 shell 为 zsh
-CMD ["zsh"]
+CMD ["tail", "-f", "/dev/null"]
