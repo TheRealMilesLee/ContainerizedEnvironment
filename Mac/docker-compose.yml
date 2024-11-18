@@ -22,3 +22,19 @@ services:
       - ~/.gitconfig:/home/node/.gitconfig
       - ~/.ssh:/home/node/.ssh
     network_mode: host
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:ollama
+    container_name: open-webui
+    restart: always
+    environment:
+      - API_ENDPOINT=http://localhost:7860
+    ports:
+      - "8000:8080"
+    volumes:
+      - ollama:/root/.ollama
+      - open-webui:/app/backend/data
+
+volumes:
+  ollama:
+  open-webui:
