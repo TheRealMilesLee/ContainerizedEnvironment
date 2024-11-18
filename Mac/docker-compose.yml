@@ -27,9 +27,7 @@ services:
     image: ghcr.io/open-webui/open-webui:ollama
     container_name: open-webui
     restart: always
-    runtime: nvidia  # 添加这个字段
     environment:
-      - NVIDIA_VISIBLE_DEVICES=all
       - API_ENDPOINT=http://localhost:7860
     ports:
       - "8000:8080"
