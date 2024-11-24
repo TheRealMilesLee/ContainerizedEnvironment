@@ -1,17 +1,23 @@
 # Dockerfile.nodejs
 FROM node:latest
 
-# 安装必要的软件
 RUN apt-get update && \
-    apt-get install -y zsh curl figlet lsd fzf bat neovim btop git && \
+    apt-get install -y zsh git curl figlet lsd fzf bat neovim glances fontconfig && \
     rm -rf /var/lib/apt/lists/*
 
 # 安装 Oh My Zsh
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
     chsh -s $(which zsh)
 
-# 设置 alias
-RUN echo "alias init='fastfetch && figlet \"Developer Drive\" && lsd -l'" >> ~/.zshrc && \
+# Install rxfetch
+RUN git clone https://github.com/mangeshrex/rxfetch
+WORKDIR /rxfetch
+RUN mkdir -p /root/.local/share/fonts/
+RUN cp ttf-material-design-icons/* /root/.local/share/fonts/
+RUN fc-cache -fv
+RUN cp rxfetch /usr/local/bin/
+
+RUN echo "alias init='rxfetch && figlet \"Developer Drive\" && lsd -l'" >> ~/.zshrc && \
     echo "alias zshrb='source ~/.zshrc'" >> ~/.zshrc && \
     echo "alias dev='cd /usr/src/app/'" >> ~/.zshrc && \
     echo "alias clang++='clang++ -Oz -pedantic-errors -Weverything -Wno-poison-system-directories -Wmsvc-not-found -Wno-c++98-compat -std=c++20 -o program'" >> ~/.zshrc && \
@@ -32,8 +38,12 @@ RUN echo "alias init='fastfetch && figlet \"Developer Drive\" && lsd -l'" >> ~/.
     echo "alias vi='nvim'" >> ~/.zshrc && \
     echo "alias cat='bat'" >> ~/.zshrc && \
     echo "alias ff='fzf'" >> ~/.zshrc && \
-    echo "alias htop='btop'" >> ~/.zshrc && \
+    echo "alias htop='glances'" >> ~/.zshrc && \
     echo "init" >> ~/.zshrc
+
+WORKDIR /usr/src/app
+
+
 
 
 # 设置默认 shell 为 zsh
