@@ -2,6 +2,7 @@
 FROM mongo:latest
 
 RUN apt-get update && \
+    apt-get upgrade -y &&\
     apt-get install -y zsh git curl figlet lsd fzf bat neovim glances fontconfig && \
     rm -rf /var/lib/apt/lists/*
 

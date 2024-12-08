@@ -2,7 +2,8 @@
 FROM mongo:latest
 
 RUN apt-get update && \
-    apt-get install -y zsh git curl figlet lsd fzf bat neovim btop && \
+    apt-get upgrade -y &&\
+    apt-get install -y zsh git curl figlet lsd fzf bat neovim glances fontconfig && \
     rm -rf /var/lib/apt/lists/*
 
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
