@@ -256,9 +256,6 @@
         "[jsonc]": {
           "editor.defaultFormatter": "vscode.json-language-features"
         },
-        "[latex]": {
-          "editor.defaultFormatter": "nickfode.latex-formatter"
-        },
         "[javascript]": {
           "editor.defaultFormatter": "vscode.typescript-language-features"
         },
@@ -436,8 +433,7 @@
         "terminal.integrated.fontSize": 11,
         "git.rebaseWhenSync": true,
         "editor.wordWrapColumn": 78,
-        "html.format.wrapLineLength": 78,
-        "workbench.colorTheme": "GitHub Dark Dimmed"
+        "html.format.wrapLineLength": 78
       }
     }
   }

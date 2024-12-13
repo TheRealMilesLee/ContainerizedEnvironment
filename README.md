@@ -29,8 +29,8 @@ Developer Drive is a Docker container configuration project for development envi
 
 1. Clone the project to your local machine:
     ```bash
-    git clone <repository-url>
-    cd <repository-directory>/Mac
+    git clone git@github.com:TheRealMilesLee/ContainerizedEnvironment.git
+    cd ContainerizedEnvironment/Mac
     ```
 
 2. Start the MongoDB container:
@@ -48,8 +48,8 @@ Developer Drive is a Docker container configuration project for development envi
 
 1. Clone the project to your local machine:
     ```bash
-    git clone <repository-url>
-    cd <repository-directory>/Windows
+    git clone git@github.com:TheRealMilesLee/ContainerizedEnvironment.git
+    cd ContainerizedEnvironment/Windows
     ```
 
 2. Start the MongoDB container:
