@@ -2,15 +2,28 @@
 
 ## Project Overview
 
-Developer Drive is a Docker container configuration project for development environments, supporting Node.js and MongoDB. This project includes Docker configuration files for both Mac and Windows, aiming to provide a consistent development experience.
+Developer Drive is a Docker container configuration project for development environments, supporting Node.js, MongoDB, Python, Java, and C/C++ (Clang/GCC). This project includes Docker configuration files for both Mac and Windows, aiming to provide a consistent development experience.
 
 ## Directory Structure
 ```bash
 +---Mac
+|   |   docker-compose.yml
+|   |   Dockerfile.mongodb
+|   |   Dockerfile.nodejs
+|   |   Dockerfile.python
+|   |   Dockerfile.javacontainer
+|   |   Dockerfile.clang-gcc
+|   |
+|   \---.devcontainer
+|           devcontainer.json
+|
 \---Windows
     |   docker-compose.yml
     |   Dockerfile.mongodb
     |   Dockerfile.nodejs
+    |   Dockerfile.python
+    |   Dockerfile.javacontainer
+    |   Dockerfile.clang-gcc
     |
     \---.devcontainer
             devcontainer.json
@@ -44,6 +57,24 @@ Developer Drive is a Docker container configuration project for development envi
     docker-compose up -d nodejs
     ```
 
+4. (Optional) Start the Python container:
+    ```bash
+    # Uncomment the python service in docker-compose.yml
+    docker-compose up -d python
+    ```
+
+5. (Optional) Start the Java container:
+    ```bash
+    # Uncomment the java service in docker-compose.yml
+    docker-compose up -d java
+    ```
+
+6. (Optional) Start the Clang/GCC container:
+    ```bash
+    # Uncomment the clang-gcc service in docker-compose.yml
+    docker-compose up -d clang-gcc
+    ```
+
 #### Windows
 
 1. Clone the project to your local machine:
@@ -63,15 +94,33 @@ Developer Drive is a Docker container configuration project for development envi
     docker-compose up -d nodejs
     ```
 
+4. (Optional) Start the Python container:
+    ```bash
+    # Uncomment the python service in docker-compose.yml
+    docker-compose up -d python
+    ```
+
+5. (Optional) Start the Java container:
+    ```bash
+    # Uncomment the java service in docker-compose.yml
+    docker-compose up -d java
+    ```
+
+6. (Optional) Start the Clang/GCC container:
+    ```bash
+    # Uncomment the clang-gcc service in docker-compose.yml
+    docker-compose up -d clang-gcc
+    ```
+
 ## Custom Configuration
 
 ### VS Code Extensions and Settings
 
-In the [devcontainer.json](http://_vscodecontentref_/2) file, you can find pre-installed VS Code extensions and settings. You can modify them as needed.
+In the [devcontainer.json](Mac/.devcontainer/devcontainer.json) file, you can find pre-installed VS Code extensions and settings. You can modify them as needed.
 
-### Zbash Configuration
+### Zsh Configuration
 
-The `Dockerfile` includes some common Zbash aliases and tools installation. You can modify them as needed.
+The `Dockerfile` includes some common Zsh aliases and tools installation. You can modify them as needed.
 
 ## License
 
