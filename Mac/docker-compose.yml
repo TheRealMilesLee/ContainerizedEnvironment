@@ -24,3 +24,48 @@ services:
   #     - ~/.gitconfig:/home/node/.gitconfig
   #     - ~/.ssh:/home/node/.ssh
   #   network_mode: host
+
+  # clang-gcc:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.clang-gcc
+  #   container_name: clang-gcc-dev-env
+  #   working_dir: /usr/src/app
+  #   restart: always
+  #   volumes:
+  #     - ~/Developer:/usr/src/app
+  #     - ~/.vscode/extensions:/home/node/.vscode/extensions
+  #     - ~/Library/Application\ Support/Code/User/:/home/node/.config/Code/User
+  #     - ~/.gitconfig:/home/node/.gitconfig
+  #     - ~/.ssh:/home/node/.ssh
+  #   network_mode: host
+
+  # java:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.javacontainer
+  #   container_name: java-dev-env
+  #   working_dir: /usr/src/app
+  #   restart: always
+  #   volumes:
+  #     - ~/Developer:/usr/src/app
+  #     - ~/.vscode/extensions:/home/node/.vscode/extensions
+  #     - ~/Library/Application\ Support/Code/User/:/home/node/.config/Code/User
+  #     - ~/.gitconfig:/home/node/.gitconfig
+  #     - ~/.ssh:/home/node/.ssh
+  #   network_mode: host
+
+  # python:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.python
+  #   container_name: python-dev-env
+  #   working_dir: /usr/src/app
+  #   restart: always
+  #   volumes:
+  #     - ~/Developer:/usr/src/app
+  #     - ~/.vscode/extensions:/home/node/.vscode/extensions
+  #     - ~/Library/Application\ Support/Code/User/:/home/node/.config/Code/User
+  #     - ~/.gitconfig:/home/node/.gitconfig
+  #     - ~/.ssh:/home/node/.ssh
+  #   network_mode: host
