@@ -1,7 +1,7 @@
 FROM kalilinux/kali-rolling
 
 RUN apt-get update && \
-    apt-get install -y zsh git curl figlet lsd fzf bat neovim glances fontconfig kali-linux-large && \
+    apt-get install -y zsh git curl figlet lsd fzf bat neovim glances kali-linux-headless && \
     apt-get autoremove -y && \
     apt-get autoclean -y
 
