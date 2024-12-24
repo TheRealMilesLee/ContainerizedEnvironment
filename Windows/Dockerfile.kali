@@ -2,14 +2,15 @@ FROM kalilinux/kali-rolling
 
 # Install necessary packages and clean up in a single RUN command
 RUN apt-get update && \
-    apt-get install -y zsh git curl figlet lsd fzf bat neovim glances kali-linux-headless && \
+    apt-get install -y --no-install-recommends zsh git curl figlet lsd bat neovim glances kali-linux-headless && \
     apt-get autoremove -y && \
     apt-get autoclean -y && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Oh My Zsh and change default shell to zsh
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
-    chsh -s $(which zsh)
+    chsh -s $(which zsh) && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install rxfetch and set up fonts
 RUN git clone https://github.com/mangeshrex/rxfetch /rxfetch && \
@@ -40,7 +41,6 @@ RUN echo "alias init='rxfetch && figlet \"Developer Drive\" && lsd -l'" >> ~/.zs
     echo "alias vim='nvim'" >> ~/.zshrc && \
     echo "alias vi='nvim'" >> ~/.zshrc && \
     echo "alias cat='bat'" >> ~/.zshrc && \
-    echo "alias ff='fzf'" >> ~/.zshrc && \
     echo "alias htop='glances'" >> ~/.zshrc && \
     echo "init" >> ~/.zshrc
 
