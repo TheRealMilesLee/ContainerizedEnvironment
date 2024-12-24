@@ -1,14 +1,17 @@
 # Dockerfile.mongodb
 FROM mongo:latest
 
+# Install dependencies
 RUN apt-get update && \
-    apt-get upgrade -y &&\
-    apt-get install -y zsh git curl figlet lsd fzf bat neovim glances fontconfig && \
+    apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends zsh git curl figlet lsd fzf bat neovim glances fontconfig && \
     rm -rf /var/lib/apt/lists/*
 
+# Install oh-my-zsh
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
     chsh -s $(which zsh)
 
+# Configure zsh
 RUN echo "alias init='fastfetch && figlet \"Developer Drive\" && lsd -l'" >> ~/.zshrc && \
     echo "alias zshrb='source ~/.zshrc'" >> ~/.zshrc && \
     echo "alias dev='cd /usr/src/app/'" >> ~/.zshrc && \
@@ -33,4 +36,6 @@ RUN echo "alias init='fastfetch && figlet \"Developer Drive\" && lsd -l'" >> ~/.
     echo "alias htop='btop'" >> ~/.zshrc && \
     echo "init" >> ~/.zshrc
 
-
+# Clean up
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
