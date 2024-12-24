@@ -75,10 +75,10 @@ services:
       context: .
       dockerfile: Dockerfile.kali
     container_name: kali-dev-env
-    working_dir: /usr/src/app
+    working_dir: /root
     restart: always
     volumes:
-      - ~/Developer:/usr/src/app
+      - ~/Developer:/root/Developer
       - ~/.vscode/extensions:/home/node/.vscode/extensions
       - ~/Library/Application\ Support/Code/User/:/home/node/.config/Code/User
       - ~/.gitconfig:/home/node/.gitconfig

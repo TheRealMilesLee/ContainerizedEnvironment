@@ -76,10 +76,10 @@ services:
       context: .
       dockerfile: Dockerfile.kali
     container_name: kali-dev-env
-    working_dir: /usr/src/app
+    working_dir: /root
     restart: always
     volumes:
-      - /e/Developer:/usr/src/app
+      - /e/Developer:/root/Developer
       - /c/Users/SilverhandMiles/.vscode/extensions:/home/node/.vscode/extensions
       - /c/Users/SilverhandMiles/AppData/Roaming/Code/User:/home/node/.config/Code/User
       - /c/Users/SilverhandMiles/.gitconfig:/home/node/.gitconfig
