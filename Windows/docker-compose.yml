@@ -60,20 +60,20 @@ services:
   #     - /c/Users/SilverhandMiles/.ssh:/home/node/.ssh
   #   network_mode: host
 
-  kali-linux:
-    build:
-      context: .
-      dockerfile: Dockerfile.kali
-    container_name: kali-dev-env
-    working_dir: /root
-    restart: always
-    volumes:
-      - /e/Developer:/root/Developer
-      - /c/Users/SilverhandMiles/.vscode/extensions:/home/node/.vscode/extensions
-      - /c/Users/SilverhandMiles/AppData/Roaming/Code/User:/home/node/.config/Code/User
-      - /c/Users/SilverhandMiles/.gitconfig:/home/node/.gitconfig
-      - /c/Users/SilverhandMiles/.ssh:/home/node/.ssh
-    network_mode: host
+  # kali-linux:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.kali
+  #   container_name: kali-dev-env
+  #   working_dir: /root
+  #   restart: always
+  #   volumes:
+  #     - /e/Developer:/root/Developer
+  #     - /c/Users/SilverhandMiles/.vscode/extensions:/home/node/.vscode/extensions
+  #     - /c/Users/SilverhandMiles/AppData/Roaming/Code/User:/home/node/.config/Code/User
+  #     - /c/Users/SilverhandMiles/.gitconfig:/home/node/.gitconfig
+  #     - /c/Users/SilverhandMiles/.ssh:/home/node/.ssh
+  #   network_mode: host
 
   mongodb:
     build:
