@@ -70,7 +70,7 @@ services:
   #     - ~/.ssh:/home/node/.ssh
   #   network_mode: host
 
-  kali-Linux:
+  kali-linux:
     build:
       context: .
       dockerfile: Dockerfile.kali
