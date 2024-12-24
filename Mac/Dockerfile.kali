@@ -3,7 +3,7 @@ FROM kalilinux/kali-rolling
 RUN apt-get update && \
     apt-get install -y zsh git curl figlet lsd fzf bat neovim glances fontconfig kali-linux-large && \
     apt-get autoremove -y && \
-    apt-get clean
+    apt-get autoclean -y
 
 # Install Oh My Zsh
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \

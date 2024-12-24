@@ -1,15 +1,4 @@
 services:
-  mongodb:
-    build:
-      context: .
-      dockerfile: Dockerfile.mongodb
-    container_name: my-mongodb
-    restart: always
-    volumes:
-      - /e/Developer/MongodbData:/data/db
-    ports:
-      - "27017:27017"
-
   # nodejs:
   #   build:
   #     context: .
@@ -85,3 +74,14 @@ services:
       - /c/Users/SilverhandMiles/.gitconfig:/home/node/.gitconfig
       - /c/Users/SilverhandMiles/.ssh:/home/node/.ssh
     network_mode: host
+
+  mongodb:
+    build:
+      context: .
+      dockerfile: Dockerfile.mongodb
+    container_name: my-mongodb
+    restart: always
+    volumes:
+      - /e/Developer/MongodbData:/data/db
+    ports:
+      - "27017:27017"
