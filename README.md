@@ -46,30 +46,30 @@ Developer Drive is a Docker container configuration project for development envi
     cd ContainerizedEnvironment/Mac
     ```
 
-2. Start the MongoDB container:
+2. Build and start the MongoDB container:
     ```bash
     docker-compose up -d mongodb
     ```
 
-3. (Optional) Start the Node.js container:
+3. (Optional) Build and start the Node.js container:
     ```bash
     # Uncomment the nodejs service in docker-compose.yml
     docker-compose up -d nodejs
     ```
 
-4. (Optional) Start the Python container:
+4. (Optional) Build and start the Python container:
     ```bash
     # Uncomment the python service in docker-compose.yml
     docker-compose up -d python
     ```
 
-5. (Optional) Start the Java container:
+5. (Optional) Build and start the Java container:
     ```bash
     # Uncomment the java service in docker-compose.yml
     docker-compose up -d java
     ```
 
-6. (Optional) Start the Clang/GCC container:
+6. (Optional) Build and start the Clang/GCC container:
     ```bash
     # Uncomment the clang-gcc service in docker-compose.yml
     docker-compose up -d clang-gcc
@@ -83,30 +83,30 @@ Developer Drive is a Docker container configuration project for development envi
     cd ContainerizedEnvironment/Windows
     ```
 
-2. Start the MongoDB container:
+2. Build and start the MongoDB container:
     ```bash
     docker-compose up -d mongodb
     ```
 
-3. (Optional) Start the Node.js container:
+3. (Optional) Build and start the Node.js container:
     ```bash
     # Uncomment the nodejs service in docker-compose.yml
     docker-compose up -d nodejs
     ```
 
-4. (Optional) Start the Python container:
+4. (Optional) Build and start the Python container:
     ```bash
     # Uncomment the python service in docker-compose.yml
     docker-compose up -d python
     ```
 
-5. (Optional) Start the Java container:
+5. (Optional) Build and start the Java container:
     ```bash
     # Uncomment the java service in docker-compose.yml
     docker-compose up -d java
     ```
 
-6. (Optional) Start the Clang/GCC container:
+6. (Optional) Build and start the Clang/GCC container:
     ```bash
     # Uncomment the clang-gcc service in docker-compose.yml
     docker-compose up -d clang-gcc
