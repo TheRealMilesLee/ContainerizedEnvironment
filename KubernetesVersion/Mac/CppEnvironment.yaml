@@ -1,0 +1,35 @@
+apiVersion: apps/v1 # 官方推荐用的API版本, 对于其他的支持可以跑kubectl api-resources
+kind: Deployment # 这个要和api version对应
+metadata:
+  name: cpp-development-environment
+  labels:
+    app: cpp-dev-environment
+spec: # 规范
+  replicas: 1 # 要几个副本写几个
+  selector: # 哪些pod属于这个deployment
+    matchLabels:
+      app: cpp-dev-environment
+  template: # 根据这个模版来创建pod
+    metadata:
+      labels:
+        app: cpp-dev-environment
+    spec:
+      containers: # 容器的配置
+        - name: cpp-dev-environment-container
+          image: silkeh/clang:latest
+          command: ["sleep", "infinity"]
+          resources: # 资源限制在这
+            requests:
+              cpu: "500m"
+              memory: "128Mi"
+            limits:
+              cpu: "4"
+              memory: "4096Mi"
+          volumeMounts: #挂载本机卷到容器内的文件夹
+            - name: developer-drive
+              mountPath: /home/silverhand/Developer # 这个是容器内访问本机挂上去的卷位置 (i.e. 本机挂在这里来)
+      volumes: # 挂载卷的配置
+        - name: developer-drive
+          hostPath: # 注意这写的应该是本机想挂上去的目录地址
+            path: /Users/silverhand/Developer
+            type: Directory
