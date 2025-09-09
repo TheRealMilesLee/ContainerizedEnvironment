@@ -17,8 +17,8 @@ spec:
         image: nginx:stable-perl
         resources:
           requests:
-            memory: "128Mi"
-            cpu: "1"
+            memory: "64Mi"
+            cpu: "0.25"
           limits:
             memory: "8Gi"
             cpu: "10"
