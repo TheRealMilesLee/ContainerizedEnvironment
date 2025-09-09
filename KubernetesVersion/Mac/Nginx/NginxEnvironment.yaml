@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx-ha
-        image: nginx:latest
+        image: nginx:stable-perl
         resources:
           requests:
             memory: "128Mi"
