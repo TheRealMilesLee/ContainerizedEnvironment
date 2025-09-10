@@ -17,10 +17,10 @@ spec:
         image: nginx:stable-perl
         resources:
           requests:
-            memory: "64Mi"
-            cpu: "0.25"
-          limits:
             memory: "8Gi"
+            cpu: "5"
+          limits:
+            memory: "16Gi"
             cpu: "10"
         ports:
         - containerPort: 80
