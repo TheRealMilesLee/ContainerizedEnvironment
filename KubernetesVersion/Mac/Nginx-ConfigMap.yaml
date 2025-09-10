@@ -5,7 +5,7 @@ metadata:
 data:
   nginx.conf: |
     events {
-        worker_connections 1024;
+        worker_connections 65535;
     }
 
     http {

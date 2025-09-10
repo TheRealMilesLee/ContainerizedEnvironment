@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeJS-Backend
+  name: nodejs-backend
 spec:
   selector:
     matchLabels:
-      app: nodeJS-Backend
+      app: nodejs-backend
   template:
     metadata:
       labels:
-        app: nodeJS-Backend
+        app: nodejs-backend
     spec:
       containers:
-      - name: nodeJS-Backend
+      - name: nodejs-backend
         image: node:trixie
         resources:
           requests:
@@ -20,6 +20,6 @@ spec:
             memory: "128Mi"
           limits:
             memory: "128Mi"
-            cpu: "500m"
+            cpu: "2"
         ports:
         - containerPort: 3000
