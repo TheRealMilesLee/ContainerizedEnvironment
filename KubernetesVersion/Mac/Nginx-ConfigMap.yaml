@@ -5,7 +5,9 @@ metadata:
 data:
   nginx.conf: |
     events {
+        worker_processes auto;
         worker_connections 65535;
+        multi_accept on;
     }
 
     http {
