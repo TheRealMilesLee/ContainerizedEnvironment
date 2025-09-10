@@ -20,6 +20,9 @@ kubectl apply -f NodeJS-Service.yaml
 
 sleep 5
 
+# 创建 NodeJS HPA
+kubectl apply -f NodeJS-HorizontalPodAutoscaler.yaml
+
 # 创建 Nginx 配置
 echo "3. 创建 Nginx 配置..."
 kubectl apply -f Nginx-ConfigMap.yaml

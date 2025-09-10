@@ -1,0 +1,25 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: nodejs-backend # 注意名字一定要和之前的服务match, 要不然找不到
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nodejs-backend  # 注意名字一定要和之前的服务match, 要不然找不到
+  minReplicas: 1
+  maxReplicas: 20 # 限制最大可创建的副本数量
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50 # 超过这个阈值以后开始扩容
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 50  # 超过这个阈值以后开始扩容
+
