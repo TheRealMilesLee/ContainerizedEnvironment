@@ -2,6 +2,10 @@
 
 echo "部署 NodeJS 和 Nginx 反向代理..."
 
+echo "0. 起Kubernetes服务"
+kubectl apply -f ../ingress-nginx.yaml
+kubectl apply -f ../MetricsServer.yaml
+
 # 部署 NodeJS 应用
 echo "1. 部署 NodeJS 应用..."
 kubectl apply -f nodeJSEnvironment.yaml
