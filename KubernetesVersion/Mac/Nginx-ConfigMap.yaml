@@ -4,8 +4,8 @@ metadata:
   name: nginx-config
 data:
   nginx.conf: |
+    worker_processes auto;
     events {
-        worker_processes auto;
         worker_connections 65535;
         multi_accept on;
     }
@@ -17,7 +17,8 @@ data:
 
         server {
             listen 80;
-            server_name localhost;
+            listen 443;
+        server_name silverhand.personal.website;
 
             location / {
                 proxy_pass http://nodejs_backend;

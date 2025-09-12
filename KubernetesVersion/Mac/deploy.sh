@@ -46,4 +46,4 @@ kubectl get services
 echo ""
 echo "访问方式:"
 echo "- 集群内部: http://nginx-ha"
-echo "- 通过 Ingress: http://nginx.local (需要配置 hosts 文件)"
+echo "- 通过 Ingress: https://silverhand.personal.website (需要正确的 DNS/hosts 和 TLS Secret)"

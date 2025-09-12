@@ -4,10 +4,15 @@ metadata:
   name: nginx-ha-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - silverhand.personal.website
+    secretName: silverhand-personal-website-tls
   rules:
-  - host: nginx.local
+  - host: silverhand.personal.website
     http:
       paths:
       - path: /
