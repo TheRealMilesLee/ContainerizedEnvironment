@@ -21,8 +21,8 @@ kubectl apply -f NodeJS-HorizontalPodAutoscaler.yaml
 # 创建 TLS Secret
 echo "3. 创建 TLS Secret..."
 kubectl create secret tls silverhand-personal-website-tls \
-  --cert=secret/silverhand.personal.website.crt \
-  --key=secret/silverhand.personal.website.key \
+  --cert=secret/silverhand.crt \
+  --key=secret/silverhand.key \
   --dry-run=client -o yaml | kubectl apply -f -
 
 # 创建 Nginx 配置
