@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nodejs-backend
 spec:
-  replicas: 1                     # 初始副本数
+  replicas: 1
   selector:
     matchLabels:
       app: nodejs-backend
@@ -15,12 +15,28 @@ spec:
       containers:
       - name: nodejs-backend
         image: silverhandlee/therealmileslee-github:latest
-        resources:
-          requests:
-            cpu: "0.5"
-            memory: "128Mi"
-          limits:
-            memory: "4Gi"
-            cpu: "4"
         ports:
         - containerPort: 3000
+        resources:
+          requests:
+            cpu: "500m"       # 0.5 CPU
+            memory: "128Mi"
+          limits:
+            cpu: "4"
+            memory: "4Gi"
+        # 自动重启挂掉的 Pod
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          failureThreshold: 3
+        # 确保 Pod 准备好接流量
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          failureThreshold: 3
