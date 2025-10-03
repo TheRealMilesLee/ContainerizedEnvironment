@@ -1,17 +1,3 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: web-page-service
-spec:
-  selector:
-    app: web-page
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 3000
-  type: ClusterIP
-
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -59,47 +45,3 @@ spec:
           timeoutSeconds: 2
           failureThreshold: 3
           successThreshold: 1
-
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: web-page-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
-spec:
-  rules:
-  - host: therealmileslee.github.io
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: web-page-service
-            port:
-              number: 80
-  tls:
-  - hosts:
-    - therealmileslee.github.io
-    secretName: web-page-tls
----
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: web-page-hpa
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: web-page-deployment
-  minReplicas: 2
-  maxReplicas: 10
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 60
-
