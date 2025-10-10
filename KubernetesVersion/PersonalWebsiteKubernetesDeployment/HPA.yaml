@@ -16,9 +16,5 @@ spec:
       target:
         type: Utilization
         averageUtilization: 85
-      name: memory
-      target:
-        type: Utilization
-        averageUtilization: 85
 
 # Note: Ensure that the Deployment 'web-page-deployment' has resource requests defined for CPU to enable HPA functionality.
