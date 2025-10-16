@@ -1,0 +1,58 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kafka-producer-external
+  namespace: logs
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: producer
+        image: python:3.11-slim
+        env:
+        - name: BROKER
+          value: "external-kafka.default.svc.cluster.local:9094"
+        - name: TOPIC
+          value: "pythonTestTopic"
+        - name: RATE
+          value: "5000"
+        - name: DURATION
+          value: "600"
+        - name: BATCH
+          value: "1000"
+        command: ["bash","-lc"]
+        args:
+        - |
+          pip install --no-cache-dir kafka-python==2.0.2 && \
+          python - <<'PY'
+          import json, os, random, string, time
+          from datetime import datetime
+          from kafka import KafkaProducer
+          BROKER=os.getenv('BROKER')
+          TOPIC=os.getenv('TOPIC')
+          RATE=float(os.getenv('RATE','500'))
+          DURATION=int(os.getenv('DURATION','60'))
+          BATCH=int(os.getenv('BATCH','100'))
+          p = KafkaProducer(bootstrap_servers=[BROKER], value_serializer=lambda v: json.dumps(v).encode('utf-8'))
+          end=time.time()+DURATION
+          sent=0
+          def r(n=16):
+              import random,string
+              return ''.join(random.choices(string.ascii_letters+string.digits,k=n))
+          interval=1.0/RATE if RATE>0 else 0
+          buf=[]
+          while time.time()<end:
+              buf.append({"ts":datetime.utcnow().isoformat()+"Z","id":sent,"text":r(24)})
+              sent+=1
+              if len(buf)>=BATCH:
+                  for x in buf:
+                      p.send(TOPIC,x)
+                  p.flush(); buf.clear()
+              if interval>0: time.sleep(interval)
+          for x in buf:
+              p.send(TOPIC,x)
+          p.flush()
+          print(f"Sent {sent} messages")
+          PY
+  backoffLimit: 0

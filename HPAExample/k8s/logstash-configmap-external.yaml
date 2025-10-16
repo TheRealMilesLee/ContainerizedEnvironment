@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: logstash-pipeline-external
+  namespace: default
+  labels:
+    app: logstash
+data:
+  logstash.conf: |
+    input {
+      kafka {
+        # 通过 K8s ExternalName Service 访问宿主机 Docker 的 Kafka
+        bootstrap_servers => "external-kafka.default.svc.cluster.local:9094"
+        topics => ["pythonTestTopic"]
+        group_id => "logstash-consumer-group"
+        auto_offset_reset => "latest"
+      }
+    }
+
+    filter {
+      mutate { add_field => { "from" => "logstash-k8s-external" } }
+    }
+
+    output {
+      stdout { codec => json }
+    }

@@ -1,0 +1,43 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: servicelogs-logstash-scaler
+  namespace: logs
+  annotations:
+    scaledobject.keda.sh/transfer-hpa-ownership: "true"
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: StatefulSet
+    name: logstash-servicelogs-logstash
+  pollingInterval: 60
+  cooldownPeriod: 3600
+  minReplicaCount: 6
+  maxReplicaCount: 8
+  advanced:
+    restoreToOriginalReplicaCount: true
+    horizontalPodAutoscalerConfig:
+      behavior:
+        scaleUp:
+          stabilizationWindowSeconds: 3600
+          policies:
+          - type: Pods
+            value: 1
+            periodSeconds: 300
+        scaleDown:
+          stabilizationWindowSeconds: 3600
+          policies:
+          - type: Pods
+            value: 1
+            periodSeconds: 300
+  triggers:
+  - type: kafka
+    metadata:
+      bootstrapServers: external-kafka.default.svc.cluster.local:9094
+      consumerGroup: logstash-consumer-group
+      topic: pythonTestTopic
+      lagThreshold: "20000"
+      activationLagThreshold: "1000"
+      offsetResetPolicy: latest
+      allowIdleConsumers: "true"
+      ensureEvenDistributionOfPartitions: "true"
